@@ -23,11 +23,30 @@ $env.config.buffer_editor = "helix"
 
 alias hx = helix
 
-def pkgs [] { (sudo pacman -Qqe | lines) | where {|p| $p not-in (open ~/initial_pkglist.txt | lines) } }
+def pkgs [] {
+    sudo pacman -Qqe | lines
+    | where {|p| $p not-in (open ~/.config/excluded_pkgs.txt | lines) }
+}
+def pending-pkgs [] { pkgs
+    | where {|p| $p not-in (open ~/.config/approved_pkgs.txt | lines) }
+}
+def approve-pkgs [] { pending-pkgs | save -a approved_pkgs.txt }
+def missing-pkgs [] {
+    open ~/.config/approved_pkgs.txt | lines
+    | where {|p| $p not-in (pkgs) }
+}
+def install-missing [] {
+    missing-pkgs
+    | each {|p| sudo pacman -S --needed $p | ignore }
+}
+def install-missing-paru [] {
+    missing-pkgs | each {|p| paru -S $p }
+}
 
 # starship
 mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+starship init nu
+    | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 # fnm
 $env.PATH = ($env.PATH
