@@ -1,0 +1,22 @@
+theme = "ayu_dark"
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+
+[keys.normal]
+esc = "@;"
+D = "@vgl"
+G = "@vgex"
+X = "@gsvgl"
+
+[keys.normal."space"]
+"%" = '@"%P<space>yd'

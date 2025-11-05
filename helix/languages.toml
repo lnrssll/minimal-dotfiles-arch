@@ -1,0 +1,19 @@
+[[language]]
+name = "javascript"
+language-servers = [ { name = "vscode-eslint-language-server", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = false
+
+[[language]]
+name = "typescript"
+language-servers = [ { name = "vscode-eslint-language-server", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = false
+
+[[language]]
+name = "jsx"
+language-servers = [ { name = "vscode-eslint-language-server", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = false
+
+[[language]]
+name = "tsx"
+language-servers = [ { name = "vscode-eslint-language-server", only-features = [ "format" ] }, "typescript-language-server" ]
+auto-format = false
