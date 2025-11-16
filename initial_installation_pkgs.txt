@@ -1,0 +1,13 @@
+base
+base-devel
+linux
+linux-firmware
+cryptsetup
+lvm2
+grub
+efibootmgr
+networkmanager
+less
+man-db
+git
+helix
