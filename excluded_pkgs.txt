@@ -4,20 +4,13 @@ base-devel
 cryptsetup
 efibootmgr
 grub
-i3-wm
-i3lock
-i3status
 less
 linux
 linux-firmware
 lvm2
 man-db
 networkmanager
-nvidia
-nvidia-settings
-nvidia-utils
 reflector
-rofi
 seatd
 xf86-video-vesa
 xorg-bdftopcf
@@ -68,6 +61,15 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xterm
+# hardware specific
+nvidia
+nvidia-settings
+nvidia-utils
+nvidia-470xx-dkms
+nvidia-470xx-utils
 # installed manually
 paru
 paru-debug
+# excluded
+i3lock
+i3status
